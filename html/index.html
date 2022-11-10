@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <script src="../js/Producto.js"></script>
+    <script src="../js/Cliente.js"></script>
+    <script src="../js/inicializar.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="https://kit.fontawesome.com/8a8b03201e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Tienda</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navColapsable" aria-controls="navColapsable"
+            aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="navColapsable">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" aria-current="page">Inicio <span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Productos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categorias" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorías</a>
+                    <div class="dropdown-menu" aria-labelledby="categorias">
+                        <a class="dropdown-item" href="#">Hombre</a>
+                        <a class="dropdown-item" href="#">Mujer</a>
+                        <a class="dropdown-item" href="#">Niños</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="d-flex my-2 my-lg-0 mx-2">
+                <input class="form-control me-sm-2" type="text" id="inputBusqueda" placeholder="Búsqueda">
+                <button class="btn btn-outline-secondary my-2 my-sm-0" id="botonBuscar" type="submit">Buscar</button>
+            </form>
+            <a class="navbar-brand mx-2" role="button" data-bs-toggle="offcanvas" href="#divCarrito" aria-controls="divCarrito"><i id="botonCarrito" class="fa fa-shopping-cart"></i></a>
+        </div>
+    </nav>     
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="divCarrito" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasLabel">Carrito</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" id="divContenidoCarrito">
+          
+        </div>
+      </div>
+
+    <div class="container justify-content-around">
+        <div class="row justify-content-around">
+            <div class="container col-12 col-sm-2" id="divIzquierdo">
+                <div class="list-group">
+                    <label class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="">
+                      Hombre
+                    </label>
+                    <label class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="">
+                      Mujer
+                    </label>
+                    <label class="list-group-item">
+                      <input class="form-check-input me-1" type="checkbox" value="">
+                      Unisex
+                    </label>
+                    <label class="list-group-item">
+                      <select id="selectFiltrarTallas" onchange="filtrarTallas()">
+                          <option>Cualquiera</option>
+                          <option>S</option>
+                          <option>M</option>
+                          <option>L</option>
+                          <option>XL</option>
+                          <option>XXL</option>
+                      </select>  Talla 
+                    </label>
+                    <label class="list-group-item">
+                        <select id="selectFiltrarColores" onchange="filtrarColores()">
+                            <option>Cualquiera</option>
+                            <option>Azul</option>
+                            <option>Rojo</option>
+                            <option>Verde</option>
+                            <option>Negro</option>
+                            <option>Amarillo</option>
+                            <option>Naranja</option>
+                        </select>  Colores
+                    </label>
+                    <label class="list-group-item">
+                        <button class="btn btn-secondary" type="button" onclick="filtrarCheckbox()">Filtrar</button>
+                    </label>
+                  </div>
+            </div>
+            <div class="row col-12 col-sm-8 justify-content-center" id="divCentral"></div>
+            <div class="container col-2" id="divDerecho"></div>
+        </div>
+    </div>
+</body>
+<script src="../bootstrap/dist/js/bootstrap.js"></script>
+</html>

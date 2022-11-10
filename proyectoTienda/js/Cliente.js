@@ -6,7 +6,7 @@ class Cliente{
         this.password=password || 'Sin Contraseña';
         this.correo=correo || 'Sin Correo';
         this.rutaImagen=rutaImagen || 'sinRuta.png';
-        this.comprasPasadas = [];
+        this.historialCompras = [];
     }
 
     cambiarImagen(nuevaRuta){

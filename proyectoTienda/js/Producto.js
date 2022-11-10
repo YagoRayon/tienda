@@ -1,23 +1,36 @@
 class Producto {    //Clase Producto
-    constructor(id,nombre,precio,material,descripcion,oferta,listaTallas,listaColores,imagen){
+    constructor(id,nombre,precio,material,descripcion,categoria,oferta,listaTallas,listaColores,listaImagenes,nExistencias){
         this.id=id || 'Sin ID';                       //ID Unico producto
         this.nombre=nombre || 'Sin Nombre';
         this.material=material || 'Sin Material';
         this.precio=precio || 'Sin Precio';
         this.descripcion=descripcion || 'Sin Descripcion';
+        this.categoria=categoria || 'Sin Categoría';
         this.oferta=oferta || false;                                //Boolean
         this.listaTallas=listaTallas || ['Sin Tallas'];   //Array
         this.listaColores=listaColores || ['Sin Colores']; //Array
-        this.imagen=imagen || 'Sin Imagen';
+        this.listaImagenes=listaImagenes || ['Sin Imagen'];   //array
+        this.nExistencias=nExistencias || 0;
     }
 
 
-    cambiarImagen(nuevaImagen){
-        this.imagen=nuevaImagen || 'error al crear clase';
+    addTalla(nuevaImagen){
+        this.listaImagenes.push(nuevaImagen);
+    }
+    removeTalla(imagenAQuitar){
+        this.listaImagenes.forEach((imagen,posicion) => {
+            if(imagen == imagenAQuitar){
+                this.listaImagenes.splice(posicion,1);
+                return true;
+            }
+        });
+        return false;
     }
 
-    cambiarPrecio(precioNuevo,oferta){
-        this.precioAntiguo = this.precio;   //Creo un nuevo campo con el precio antiguo
+    cambiarPrecio(precioNuevo,oferta=false){    //Si solo meto precio, no creo una oferta 
+        if (oferta==true){
+            this.precioAntiguo = this.precio;   //Creo un nuevo campo con el precio antiguo
+        }
         this.precio = precioNuevo;          //Asigno el nuevo precio al precio actual
         this.oferta=oferta;                 //Elijo si quiero que sea una oferta o solo un cambio de precio(booleana)
     }

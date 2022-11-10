@@ -1,0 +1,12 @@
+var producto1=new Producto('1','Camiseta Corta',10,'Algodón','Una camiseta corta simple en varios colores','unisex',false,['S','M','L','XL','XXL'],['Rojo','Azul','Verde','Negro','Amarillo','Marrón'],['../images/camisetaCorta1.jpg'],50);
+var producto2=new Producto('2','Camiseta Larga',10,'Algodón','Una camiseta larga simple en varios colores','unisex',false,['S','M','L','XL','XXL'],['Rojo','Azul','Verde','Negro','Amarillo','Marrón'],['../images/camisetaLarga1.jpg'],50);
+var producto3=new Producto('3','Pantalón Corto',10,'Algodón','Un pantalón corto simple en varios colores','unisex',false,['S','M','L','XL','XXL'],['Rojo','Azul','Verde','Negro','Amarillo','Marrón'],['../images/pantalonCorto1.jpg'],50);
+var producto4=new Producto('4','Pantalón Largo',10,'Algodón','Un pantalón corto simple en varios colores','unisex',false,['S','M','L','XL','XXL'],['Rojo','Azul','Verde','Negro','Amarillo','Marrón'],['../images/pantalonLargo1.jpg'],50);
+var producto5=new Producto('5','Camisa de Seda',10,'Seda','Una camisa de seda','Hombre',false,['M','L','XL','XXL'],['Rojo','Negro'],['../images/camisaSeda1.png'],50);
+var listaProductos=[];
+producto1.cambiarPrecio(7.5,true);
+listaProductos.push(producto1);
+listaProductos.push(producto2);
+listaProductos.push(producto3);
+listaProductos.push(producto4);
+listaProductos.push(producto5);

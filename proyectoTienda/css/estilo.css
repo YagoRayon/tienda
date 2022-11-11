@@ -1,3 +1,7 @@
-#divCentral img{
-    
+body{
+    padding-top:50px;
+}
+#divContenidoCarrito img{
+    height:100px;
+    width:100px;
 }
